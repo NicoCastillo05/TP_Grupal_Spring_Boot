@@ -1,0 +1,17 @@
+com\tp\Main.class
+com\tp\Articulo.class
+com\tp\PuntoVenta.class
+com\tp\ListaPrecioArticulo.class
+com\tp\ListaPrecio.class
+com\tp\Cliente.class
+com\tp\Domicilio.class
+com\tp\Usuario.class
+com\tp\AuditoriaApp.class
+com\tp\TipoMoneda.class
+com\tp\Contacto.class
+com\tp\Rubro.class
+com\tp\EntityId.class
+com\tp\CondicionIva.class
+com\tp\FacturaVentaDetalle.class
+com\tp\FacturaVenta.class
+com\tp\Marca.class

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <!-- Nombre que usaremos desde el Main.
+         RESOURCE_LOCAL indica que manejaremos las transacciones
+         desde nuestro programa. -->
+    <persistence-unit name="FacturacionPU"
+                      transaction-type="RESOURCE_LOCAL">
+
+        <!-- Selecciona Hibernate como implementacion de JPA -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Entidades que forman parte de esta unidad de persistencia -->
+        <class>com.tp.Usuario</class>
+        <class>com.tp.PuntoVenta</class>
+        <class>com.tp.Marca</class>
+        <class>com.tp.Rubro</class>
+        <class>com.tp.Articulo</class>
+        <class>com.tp.ListaPrecio</class>
+        <class>com.tp.ListaPrecioArticulo</class>
+        <class>com.tp.FacturaVenta</class>
+        <class>com.tp.FacturaVentaDetalle</class>
+        <class>com.tp.Contacto</class>
+        <class>com.tp.Domicilio</class>
+        <class>com.tp.Cliente</class>
+        <class>com.tp.TipoMoneda</class>
+        <class>com.tp.CondicionIva</class>
+
+        <properties>
+
+            <!-- Driver para conectarnos a PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="org.postgresql.Driver"/>
+
+            <!-- Direccion, puerto y nombre de nuestra base de datos -->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:postgresql://127.0.0.1:5432/facturacion"/>
+
+            <!-- Usuario y contraseña que configuramos en Docker -->
+            <property name="jakarta.persistence.jdbc.user"
+                      value="tp"/>
+
+            <property name="jakarta.persistence.jdbc.password"
+                      value="tp123"/>
+
+            <!-- Muestra en consola las sentencias SQL ejecutadas -->
+            <property name="hibernate.show_sql"
+                      value="true"/>
+
+            <!-- Presenta el SQL con saltos de linea y sangria -->
+            <property name="hibernate.format_sql"
+                      value="true"/>
+
+            <!-- Crea o actualiza las tablas segun las entidades
+                 cuando iniciamos la unidad de persistencia -->
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/>
+
+        </properties>
+
+    </persistence-unit>
+</persistence>
